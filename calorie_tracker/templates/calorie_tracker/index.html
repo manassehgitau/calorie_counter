@@ -1,0 +1,22 @@
+{% extends 'calorie_tracker/base.html' %}
+{% block content %}
+    <div class="flex justify-between items-center mb-4">
+        <a href="{% url 'add_food' %}" class="bg-blue-500 text-white px-4 py-2 rounded">Add Food</a>
+        <a href="{% url 'reset_calories' %}" class="bg-red-500 text-white px-4 py-2 rounded">Reset</a>
+    </div>
+
+    <ul class="space-y-2">
+        {% for item in food_items %}
+            <li class="bg-white p-4 rounded shadow flex justify-between items-center">
+                {{ item.name }} - {{ item.calories }} cal
+                <a href="{% url 'delete_food' item.id %}" class="text-red-500">Delete</a>
+            </li>
+        {% empty %}
+            <li>No food items added today.</li>
+        {% endfor %}
+    </ul>
+
+    <div class="mt-6 text-xl font-semibold">
+        Total Calories: {{ total_calories }}
+    </div>
+{% endblock %}
