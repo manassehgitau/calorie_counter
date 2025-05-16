@@ -34,10 +34,6 @@ This is a simple Django web app to track daily calorie intake.
     python manage.py runserver
     ```
 
-## Deployment
-
-- Deploy on [Render](https://render.com/)
-- Add the live link here: **[https://yourapp.onrender.com](https://yourapp.onrender.com)**
 
 ## License
 
